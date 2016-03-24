@@ -1,29 +1,218 @@
 extends ../layouts/default
 
 block content
-	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-		article
-			p: a(href='/blog') &larr; back to the blog
-			hr
-			if !data.post
-				h2 Invalid Post.
-			else
-				header
-					h1= data.post.title
-					h5 Posted 
-						if data.post.publishedDate
-							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
-						if data.post.categories && data.post.categories.length
-							| in 
-							each cat, cat_i in data.post.categories
-								a(href='/blog/' + cat.key)= cat.name
-								if cat_i < data.post.categories.length - 1
-									| , 
-								else
-									|  
-						if data.post.author
-							| by #{data.post.author.name.first}
-				.post
-					if data.post.image.exists
-						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
-					!= data.post.content.full
+	section#banner
+		.container
+			.row
+				.blog-header.text-center
+					h2 Single Blog Details
+					ul.breadcrumb
+						li home
+						li blog
+						li single post details
+	section#blog-single
+		.container
+			// Portfolio item slider start
+			.col-lg-8.col-md-8.col-sm-12.col-xs-12
+				article
+					p: a(href='/blog') &larr; back to the blog
+					hr
+					if !data.post
+						h2 Invalid Post.
+					else
+						header
+							h1= data.post.title
+							h5 Posted 
+								if data.post.publishedDate
+									| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
+								if data.post.categories && data.post.categories.length
+									| in 
+									each cat, cat_i in data.post.categories
+										a(href='/blog/' + cat.key)= cat.name
+										if cat_i < data.post.categories.length - 1
+											| , 
+										else
+											|  
+								if data.post.author
+									| by #{data.post.author.name.first}
+						.post
+							if data.post.image.exists
+								.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
+							!= data.post.content.full
+				hr
+				.clearfix
+				.tags1
+					p Tags: 
+					a(href='#') Web
+					&nbsp;
+					a(href='#') graphics
+					&nbsp;
+					a(href='#') Seo
+				.share1
+					h4 Share this :
+					ul.social-contact.list-inline
+						li
+							a(href='#')
+								i.fa.fa-facebook
+						li
+							a(href='#')
+								i.fa.fa-twitter
+						li
+							a(href='#')
+								i.fa.fa-google-plus
+						li
+							a(href='#')
+								i.fa.fa-linkedin
+						li
+							a(href='#')
+								i.fa.fa-pinterest
+				.clearfix
+				hr
+				.about-auther
+					h4 About the Author
+					hr
+					.well
+						img.img-responsive(src='/images/team/pic1.jpg', alt='alt')
+						p
+							| Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.
+				// About auther end
+				// comments start
+				.comments
+					h4 Comments
+					hr
+					ul.media-list
+						li.media
+							a.media-left(href='#')
+								img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
+							.media-body
+								h4.media-heading
+									| Jhohn Milton
+									span
+										i 2 july 2014
+								p
+									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
+								a(href='#') Reply
+						li.media.middle
+							a.media-left(href='#')
+								img.img-responsive(src='/images/team/pic1.jpg', alt='alt')
+							.media-body
+								h4.media-heading
+									| Rack Hasilton 
+									span
+										i 2 july 2014
+								p
+									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
+								a(href='#') Reply
+						li.media
+							a.media-left(href='#')
+								img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
+							.media-body
+								h4.media-heading
+									| Jhohn Milton
+									span
+										i 2 july 2014
+								p
+									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
+								a(href='#') Reply
+				// comments End
+				.blog-form
+					h4
+						| Leave for a 
+						span comment 
+					hr
+					.form-group
+						.col-md-6
+							input.form-control(type='text', placeholder='Name')
+					.form-group
+						.col-md-6
+							input.form-control(type='email', placeholder='Email')
+					.form-group
+						.col-md-12
+							textarea.form-control(name='comment', id='', cols='30', rows='7', placeholder='Message')
+					.form-group
+						.col-md-12
+							.text-center
+								button.btn.btn-main  Submit Now 
+				// blog footer end
+			// left blog part end
+			// Right Blog part row start
+			.row
+				// sidebar start
+				.col-lg-4.col-md-4.col-sm-12.col-xs-12
+					.blog-sidebar
+						.recent-post
+							h4 Latest posts
+							hr
+							ul
+								li.col-md-12.col-sm-4
+									.single-post
+										a(href='#')
+											img.img-responsive(src='/images/blog/pic7.jpg', alt='post-img')
+										p Ellentesque eleifend condimentum tellus.
+									span 3 days ago
+								li.col-md-12.col-sm-4
+									.single-post
+										a(href='#')
+											img.img-responsive(src='/images/blog/pic6.jpg', alt='post-img')
+										p Ellentesque eleifend condimentum tellus.
+									span 3 days ago
+								li.col-md-12.col-sm-4
+									.single-post
+										a(href='#')
+											img.img-responsive(src='/images/blog/pic10.jpg', alt='post-img')
+										p Ellentesque eleifend condimentum tellus.
+									span 3 days ago
+						// Recent posts end
+						.clearfix
+						.blog-catagory
+							h4 Blog catagories
+							ul
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										|  Web Design 
+										span.badge 14
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										| Social Media 
+										span.badge 23
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										|  Online Gaming 
+										span.badge 43
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										| Technology 
+										span.badge 27
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										| Photography 
+										span.badge 44
+								li
+									a(href='#')
+										i.fa.fa-angle-right
+										| Economics 
+										span.badge 54
+						// blog catagory end
+						.clearfix
+						.right-tags
+							h4 Tags
+							hr
+							.footer_menu.tags
+								a(href='#')  Design
+								a(href='#')  User Interface
+								a(href='#')  Graphics
+								a(href='#')  Web Design
+								a(href='#')  Development
+								a(href='#')  Asp.net
+								a(href='#')  Bootstrap
+								a(href='#')  Joomla
+								a(href='#')  SEO
+								a(href='#')  Wordepress
+					// blog sidebar end
+				// sidebar end
+		// Portfolio item row end

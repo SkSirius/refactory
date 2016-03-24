@@ -447,7 +447,7 @@ ul.navbar-nav > .active > a{
  .carousel-indicators{
     bottom:100px;
     width: 10%;
-    left: 45%;
+    left: 44%;
     margin:0 auto;
     bottom:30%;
 }
@@ -2001,22 +2001,32 @@ padding: 8px 15px;
     border:0px;
     padding: 8px 0px 5px 8px;
     font-size: 16px;
+    padding-right: 8px;
 }
 
 .share1 .social-contact li .fa-facebook{
     background: #395793;
+	border: 1px solid #395793;
 }
 .share1 .social-contact li .fa-linkedin{
     background: #0A6594;
+	border: 1px solid #0A6594;
+	padding-top: 6px;
+	
 }
 .share1 .social-contact li .fa-google-plus{
     background: #9E3023;
+	border: 1px solid #9E3023;
 }
 .share1 .social-contact li .fa-twitter{
     background: #1CA3DB;
+	border: 1px solid #1CA3DB;
 }
 .share1 .social-contact li .fa-pinterest{
     background: #A9272F;
+	border: 1px solid #A9272F;
+	padding-top:6px;
+	padding-left: 7px;
 }
 
 .blog-desc .share h4{

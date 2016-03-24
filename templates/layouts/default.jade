@@ -29,6 +29,8 @@ html.no-js
 		link(rel='stylesheet', href='/styles/owl.theme.css')
 		// Pretty Photo
 		link(rel='stylesheet', href='/styles/prettyPhoto.css')
+		// Template styles
+		link(rel='stylesheet', href='/styles/custom.css')
 		// Main color style
 		link(rel='stylesheet', href='/styles/red.css')
 		
@@ -38,8 +40,7 @@ html.no-js
 		link(href='https://fonts.googleapis.com/css?family=Lato:400,300', rel='stylesheet', type='text/css')
 		link(href='https://fonts.googleapis.com/css?family=Raleway:400,300,500', rel='stylesheet', type='text/css')
 		
-		// Template styles
-		link(rel='stylesheet', href='/styles/custom.css')
+		
 		
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -62,32 +63,33 @@ html.no-js
 							span.icon-bar
 							span.icon-bar
 						a.navbar-brand(href='/')
-							img(src='images/Drawing.png', alt='')
+							img(src='/images/Drawing.png', alt='')
 					// Navbar header End
 					nav#bs-example-navbar-collapse-1.collapse.navbar-collapse.navigation(role='navigation')
 						ul.nav.navbar-nav.navbar-right
 							li.active
-								a.page-scroll(href='#slider_part') Home 
+								a.page-scroll(href='/#slider_part') Home 
 							li
-								a.page-scroll(href='#service') Services
+								a.page-scroll(href='/#service') Services
 							li
-								a.page-scroll(href='#portfolio') Portfolio
+								a.page-scroll(href='/#portfolio') Portfolio
 							li
-								a.page-scroll(href='#about') About Us 
+								a.page-scroll(href='/#about') About Us 
 							li
-								a.page-scroll(href='#blog') Blog
+								a.page-scroll(href='/blog') Blog
 							li
-								a.page-scroll(href='#contact') Contact Us
+								a.page-scroll(href='/#contact') Contact Us
 				// /.container-fluid
-			
 			.app-main-wrapper
+				block intro
+			
 				block content
 			
 			section#footer
 				.footer_top
 					.container
 						.row
-							.col-md-3.col-sm-6.col-xs-12
+							.col-md-4.col-sm-6.col-xs-12
 								h3.menu_head Main Menu
 								.footer_menu
 									ul
@@ -101,7 +103,7 @@ html.no-js
 											a(href='/blog') Blog
 										li
 											a(href='/contact') Contact
-							.col-md-3.col-sm-6.col-xs-12
+							.col-md-4.col-sm-6.col-xs-12
 								h3.menu_head Useful Links
 								.footer_menu
 									ul
@@ -115,7 +117,7 @@ html.no-js
 											a(href='#') consectetur adipisicing elit.
 										li
 											a(href='#') Frequently Asked Questions
-							.col-md-3.col-sm-6.col-xs-12
+							.col-md-4.col-sm-6.col-xs-12
 								h3.menu_head Contact us
 								.footer_menu_contact
 									ul
@@ -131,19 +133,6 @@ html.no-js
 										li
 											i.fa.fa-map-marker
 											span  www.refactory.com
-							.col-md-3.col-sm-6.col-xs-12
-								h3.menu_head Tags
-								.footer_menu.tags
-									a(href='#')  Design
-									a(href='#')  User Interface
-									a(href='#')  Graphics
-									a(href='#')  Web Design
-									a(href='#')  Development
-									a(href='#')  Asp.net
-									a(href='#')  Bootstrap
-									a(href='#')  Joomla
-									a(href='#')  SEO
-									a(href='#')  Wordepress
 				.footer_b
 					.container
 						.row
@@ -182,35 +171,35 @@ html.no-js
 			// End Back To Top Button
 		//- JAVASCRIPT
 
-	script(type='text/javascript', src='js/jquery.js')
+	script(type='text/javascript', src='/js/jquery.js')
 	// Bootstrap jQuery
-	script(src='js/bootstrap.min.js')
+	script(src='/js/bootstrap.min.js')
 	// Owl Carousel
-	script(src='js/owl.carousel.min.js')
+	script(src='/js/owl.carousel.min.js')
 	// Isotope
-	script(src='js/jquery.isotope.js')
+	script(src='/js/jquery.isotope.js')
 	// Pretty Photo
-	script(type='text/javascript', src='js/jquery.prettyPhoto.js')
+	script(type='text/javascript', src='/js/jquery.prettyPhoto.js')
 	// SmoothScroll
-	script(type='text/javascript', src='js/smooth-scroll.js')
+	script(type='text/javascript', src='/js/smooth-scroll.js')
 	// Image Fancybox
-	script(type='text/javascript', src='js/jquery.fancybox.pack.js?v=2.1.5')
+	script(type='text/javascript', src='/js/jquery.fancybox.pack.js?v=2.1.5')
 	// Counter
-	script(type='text/javascript', src='js/jquery.counterup.min.js')
+	script(type='text/javascript', src='/js/jquery.counterup.min.js')
 	// waypoints
-	script(type='text/javascript', src='js/waypoints.min.js')
+	script(type='text/javascript', src='/js/waypoints.min.js')
 	// Bx slider
-	script(type='text/javascript', src='js/jquery.bxslider.min.js')
+	script(type='text/javascript', src='/js/jquery.bxslider.min.js')
 	// Scroll to top
-	script(type='text/javascript', src='js/jquery.scrollTo.js')
+	script(type='text/javascript', src='/js/jquery.scrollTo.js')
 	// Easing js
-	script(type='text/javascript', src='js/jquery.easing.1.3.js')
+	script(type='text/javascript', src='/js/jquery.easing.1.3.js')
 	// PrettyPhoto
-	script(src='js/jquery.singlePageNav.js')
+	script(src='/js/jquery.singlePageNav.js')
 	// Wow Animation
-	script(type='js/javascript', src='js/wow.min.js')
+	script(type='js/javascript', src='/js/wow.min.js')
 	// Custom js
-	script(src='js/custom.js')
+	script(src='/js/custom.js')
 
 	//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 	//- which generate links to edit content for users who can access Keystone

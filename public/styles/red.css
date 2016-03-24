@@ -298,6 +298,7 @@ textarea:hover {
     background: none repeat scroll 0% 0% #EE3B24;
 }
 
+.read-more a, 
 .blog-desc .post-meta-links li a{
     color: #EE3B24;
 }
@@ -324,10 +325,13 @@ textarea:hover {
 .blog-form h4 span{
     color: #EE3B24;
 }
-.blog-catagory ul li a:hover{
+.blog-catagory ul li a:hover,
+.blog-catagory ul li a.active
+{
     color: #EE3B24;
 }
-.blog-catagory ul li a:hover span{
+.blog-catagory ul li a:hover span,
+.blog-catagory ul li a.active span {
     color: #fff;
     background: #EE3B24;
 }

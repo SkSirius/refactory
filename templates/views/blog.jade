@@ -1,24 +1,43 @@
 extends ../layouts/default
 
 mixin post(post)
-	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/blog/post/' + post.slug)= post.title
-		p.lead.text-muted Posted 
+	.blog-desc(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+		h4: a(href='/blog/post/' + post.slug)= post.title
+		ul.post-meta-links.list-inline
 			if post.publishedDate
-				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
-			if post.categories && post.categories.length
-				| in 
-				each cat, i in post.categories
-					a(href='/blog/' + cat.key)= cat.name
-					if i < post.categories.length - 1
-						| , 
-					else
-						|  
+				li
+					
+					a(href='#')
+						span
+							i.fa.fa-bookmark
+						| #{post._.publishedDate.format('MMMM Do, YYYY')}
 			if post.author
-				| by #{post.author.name.first}
+				li
+					
+					a(href='#')
+						span
+							i.fa.fa-user
+						| #{post.author.name.first}
+			if post.categories && post.categories.length
+				li
+					a
+						span
+							i.fa.fa-bookmark
+						each cat, i in post.categories
+							a(href='/blog/' + cat.key)= cat.name
+							if i < post.categories.length - 1
+								| , 
+							else
+								|  
+			li
+				a(href='#')
+					span
+						i.fa.fa-comments
+					| 23
 		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
+			img(src=post._.image.fit(300,300)).img.text-center
 		p!= post.content.brief
+		p
 		if post.content.extended
 			p.read-more: a(href='/blog/post/' + post.slug) Read more...
 
@@ -28,7 +47,7 @@ block intro
 
 block content
 	.container: .row
-		.col-sm-8.col-md-9
+		.col-sm-8.col-md-8
 			if filters.category && !data.category
 				h3.text-muted Invalid Category.
 			else
@@ -43,6 +62,7 @@ block content
 							|  posts.
 					else
 						h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
+					br
 					.blog
 						each post in data.posts.results
 							+post(post)
@@ -62,14 +82,40 @@ block content
 								li.disabled: a(href='?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
 				else
 					if data.category
-						h3.text-muted There are no posts in the category #{data.category.name}.
+						h4.text-muted There are no posts in the category #{data.category.name}.
 					else
-						h3.text-muted There are no posts yet.
+						h4.text-muted There are no posts yet.
 		
 		if data.categories.length
-			.col-sm-4.col-md-3
-				h2 Categories
-				.list-group(style='margin-top: 70px;')
-					a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
-					each cat in data.categories
-						a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+			.col-sm-4.col-md-4
+				.clearfix
+				.blog-catagory
+					h4 Blog categories
+					ul
+						li
+							a(href='/blog', class=!data.category ? 'active' : false)
+								i.fa.fa-angle-right
+								|  All Categories
+								span.badge 14
+						each cat in data.categories
+							li
+								a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false)
+									i.fa.fa-angle-right
+									= cat.name
+									span.badge 14
+				// blog catagory end
+				.clearfix
+				.right-tags
+					h4 Tags
+					hr
+					.footer_menu.tags
+						a(href='#')  Design
+						a(href='#')  User Interface
+						a(href='#')  Graphics
+						a(href='#')  Web Design
+						a(href='#')  Development
+						a(href='#')  Asp.net
+						a(href='#')  Bootstrap
+						a(href='#')  Joomla
+						a(href='#')  SEO
+						a(href='#')  Wordepress

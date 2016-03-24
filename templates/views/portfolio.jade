@@ -1,0 +1,111 @@
+extends ../layouts/default
+
+block content
+	section#portfolio_single
+		.container
+			.row
+				.col-md-12
+					.portfolio-header.text-center
+						h2 Portfolio Details
+						ul.breadcrumb
+							li home
+							li portfolio
+							li portfolio details
+				// Col-md-12 End
+	section#portfolio-single
+		.container
+			// Portfolio item row start
+			.row
+				// Portfolio item slider start
+				.col-lg-12.col-md-12.col-sm-12.col-xs-12
+					.portfolio-slider-wrapper
+						ul#portfolio-slider
+							li
+								img.img-responsive(src='/images/slider/s3.jpg', alt='')
+							li
+								img.img-responsive(src='/images/slider/s2.jpg', alt='')
+							li
+								img.img-responsive(src='/images/slider/s1.jpg', alt='')
+				// Portfolio item slider end
+			// Portfolio item row end
+		// Portfolio item container end
+	// Portfolio Section End
+	section#port-content
+		.container
+			.row
+				// sidebar start
+				.col-lg-8.col-md-8.col-sm-12.col-xs-12
+					.sidebar
+						.portfolio-desc
+							h4 Project Overview
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quasi nisi optio, earum facilis perspiciatis temporibus nobis nam velit incidunt. Recusandae accusamus pariatur, explicabo iure ea ex perspiciatis perferendis quam! Oat cake oat cake dessert brownie. 
+								| Gummies tiramisu tart jujubes jelly beans macaroon danish pie muffin. Soufflé pudding brownie pudding fruitcake marshmallow I love. Dragée jujubes chocolate cake jelly beans.
+							p
+								a.btn.btn-main.featured(href='#') Project Link
+				.col-lg-4.col-md-4.col-sm-12.col-xs-12
+					.right-sidebar
+						h4 Project Details
+						ul.circle
+							li
+								span date : 
+								|  15 May 2014
+							li
+								span client : 
+								| Enavto
+							li
+								span Category :
+								|  Web design
+					.share
+						ul.social-contact.list-inline.text-left
+							li
+								a(href='#')
+									i.fa.fa-facebook
+							li
+								a(href='#')
+									i.fa.fa-twitter
+							li
+								a(href='#')
+									i.fa.fa-rss
+							li
+								a(href='#')
+									i.fa.fa-google-plus
+							li
+								a(href='#')
+									i.fa.fa-linkedin
+							li
+								a(href='#')
+									i.fa.fa-pinterest
+	section#related
+		.container
+			.row
+				.related.text-center
+					h3 Related Projects
+					.col-md-3.col-sm-6
+						.rel-post
+							a(href='#')
+								img.img-responsive(src='/images/blog/pic6.jpg', alt='')
+								.caption
+									h4 New speaker
+									p Graphics design
+					.col-md-3.col-sm-6
+						.rel-post
+							a(href='#')
+								img.img-responsive(src='/images/blog/pic7.jpg', alt='')
+								.caption
+									h4 Skyscaper
+									p photograph
+					.col-md-3.col-sm-6
+						.rel-post
+							a(href='#')
+								img.img-responsive(src='/images/blog/pic8.jpg', alt='')
+								.caption
+									h4 New website
+									p Web design
+					.col-md-3.col-sm-6
+						.rel-post
+							a(href='#')
+								img.img-responsive(src='/images/blog/pic11.jpg', alt='')
+								.caption
+									h4 Top rider
+									p Wordpress
