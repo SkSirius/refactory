@@ -75,14 +75,14 @@ block content
 								i.fa.fa-laptop
 								h5 Application Development
 								p
-									| You can not ignore mobile devices anymore and with this theme all your visitors will be very pleased how they see your website.
+									| The most solid part of our services. Basically you come to us with idea or requirements and we transform it into working business.
 								button.btn.btn-main  Read More
 						.col-md-3.col-xs-12.col-sm-6
 							.feature_content
 								i.fa.fa-mobile
 								h5 Mobile Development
 								p
-									| Full Time support. Very much helpful and possesive at the same time. With all this in mind you won’t be outdated anytime soon. Really!!
+									| Mobile is everywhere. Wherever you go, whenever you need information. We are surrounded by mobile solutions. Move one step forward and create cross-platform mobile app.
 								button.btn.btn-main  Read More
 						// Col-md-4 Single_feature End
 						.col-md-3.col-xs-12.col-sm-6
@@ -90,7 +90,7 @@ block content
 								i.fa.fa-desktop
 								h5 IT Consulting
 								p
-									| This theme integrates with WordPress in the most awesome way! Functionality is separated from style through uncreadble useful for user.
+									| Years of experience in software development field gives us a chance to share our knowledge with others! Having any problems? In doubt how to progress? We can help you.
 								button.btn.btn-main  Read More
 						// Col-md-4 Single_feature End
 						.col-md-3.col-xs-12.col-sm-6
@@ -98,7 +98,7 @@ block content
 								i.fa.fa-list-alt
 								h5 Technical Support
 								p
-									| Shadow is as optimized as it gets. No useless wrappers, no double headings, everything is coded with SEO in mind. Content is KING!
+									| Running out of resources and capacity? Feel free to ask us for help in case you need more free hands!
 								button.btn.btn-main  Read More
 						// Col-md-4 Single_feature End
 				// Row End
@@ -113,7 +113,7 @@ block content
 						h3.feature_title
 							| Our 
 							b Works
-						h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						h4.feature_sub This is what we do. This is how we do. This is what we are proud of!
 						.divider
 				// Col-md-12 End
 		#isotope-filter.skew3.text-center
@@ -413,82 +413,25 @@ block content
 		.row
 			.blog-timeline
 				#owl-blog.owl-carousel.owl-theme
-					.item
-						.single_blog
-							.post_img.text-center
-								a(href='blog-single.html')
-									img.img-responsive(src='images/blog/pic3.jpg', alt='')
-								.post-date
-									span 25
-									|  6
-							a(href='blog-single.html')
-								h4 Lorem ipsum dolor sit amet
-							ul.list-inline
-								li
-									i.fa.fa-pencil
-									|  John Smith
-								li
-									i.fa.fa-comments
-									|  12
-							p
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
-					.item
-						.single_blog
-							.post_img.text-center
-								a(href='blog-single.html')
-									img.img-responsive(src='images/blog/pic3.jpg', alt='')
-								.post-date
-									span 25
-									|  6
-							a(href='blog-single.html')
-								h4 Lorem ipsum dolor sit amet
-							ul.list-inline
-								li
-									i.fa.fa-pencil
-									|  John Smith
-								li
-									i.fa.fa-comments
-									|  12
-							p
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
-					.item
-						.single_blog
-							.post_img.text-center
-								a(href='blog-single.html')
-									img.img-responsive(src='images/blog/pic3.jpg', alt='')
-								.post-date
-									span 25
-									|  6
-							a(href='blog-single.html')
-								h4 Lorem ipsum dolor sit amet
-							ul.list-inline
-								li
-									i.fa.fa-pencil
-									|  John Smith
-								li
-									i.fa.fa-comments
-									|  12
-							p
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
-					.item
-						.single_blog
-							.post_img.text-center
-								a(href='blog-single.html')
-									img.img-responsive(src='images/blog/pic3.jpg', alt='')
-								.post-date
-									span 25
-									|  6
-							a(href='blog-single.html')
-								h4 Lorem ipsum dolor sit amet
-							ul.list-inline
-								li
-									i.fa.fa-pencil
-									|  John Smith
-								li
-									i.fa.fa-comments
-									|  12
-							p
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
+					each post in data.posts.results
+						.item
+							.single_blog
+								.post_img.text-center
+									a(href='/blog/post/' + post.slug)
+										img(src=post._.image.fit(300,300)).img-responsive
+									.post-date
+										span #{post._.publishedDate.format('DD')}
+										|  #{post._.publishedDate.format('MMMM')}
+								a(href='/blog/post/' + post.slug)
+									h4= post.title
+								ul.list-inline
+									li
+										i.fa.fa-pencil
+										|  #{post.author.name.first}
+									li
+										i.fa.fa-comments
+										|  12
+								p!= post.content.brief
 			// blog Timeline End
 	// bLOG End
 	section#contact
