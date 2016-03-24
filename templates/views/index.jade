@@ -1,23 +1,523 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>pavlo.sobchuk@gmail.com</strong> and the password <strong>greedisgood</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+	// Slider start
+	section#slider_part
+		#carousel-example-generic.carousel.slide(data-ride='carousel')
+			// Indicators
+			ol.carousel-indicators.text-center
+				li.active(data-target='#carousel-example-generic', data-slide-to='0')
+				li(data-target='#carousel-example-generic', data-slide-to='1')
+				li(data-target='#carousel-example-generic', data-slide-to='2')
+			.carousel-inner
+				.item.active
+					.overlay-slide
+						img.img-responsive(src='images/banner/p5.jpg', alt='')
+					.carousel-caption
+						.col-md-12.col-xs-12.text-center
+							h2 Cyprass
+							h3.animated2
+								b Creative
+								|  Modern and clean
+							.line
+							p.animated3 Unique clean design
+				.item
+					.overlay-slide
+						img.img-responsive(src='images/banner/p3.jpg', alt='')
+					.carousel-caption
+						.col-md-12.col-xs-12.text-center
+							h2 Cyprass
+							h3.animated3
+								| responsive 
+								b Flat 
+								| design
+						.line
+						p.animated2 best choice for you
+				.item
+					.overlay-slide
+						img.img-responsive(src='images/banner/p10.jpg', alt='')
+					.carousel-caption
+						.col-md-12.col-xs-12.text-center
+							h2 Cyprass
+							h3.animated3
+								| We're crazy 
+								b coders
+						.line
+						p.animated2  way to success
+			// End Carousel Inner
+		// Controls
+		.slides-control
+			a.left.carousel-control(href='#carousel-example-generic', data-slide='prev')
+				span
+					i.fa.fa-angle-left
+			a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
+				span
+					i.fa.fa-angle-right
+	// Slider end
+	// Service Area start
+	section#service
+		.container
+			.row
+				.col-md-12.col-sm-12.col-xs-12
+					.feature_header.text-center
+						h3.feature_title
+							| Our 
+							b Services
+						h4.feature_sub
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+							br
+							| Iusto provident non voluptatibus animi quidem incidunt eum, eligendi doloribus dicta.
+						.divider
+				// Col-md-12 End
+				.row
+					.main_feature.text-center
+						.col-md-3.col-xs-12.col-sm-6
+							.feature_content
+								i.fa.fa-lightbulb-o
+								h5 Lightweight
+								p
+									| You can not ignore mobile devices anymore and with this theme all your visitors will be very pleased how they see your website.
+								button.btn.btn-main  Read More
+						.col-md-3.col-xs-12.col-sm-6
+							.feature_content
+								i.fa.fa-pencil
+								h5 Beautiful Typrography
+								p
+									| This theme integrates with WordPress in the most awesome way! Functionality is separated from style through uncreadble useful for user.
+								button.btn.btn-main  Read More
+						// Col-md-4 Single_feature End
+						.col-md-3.col-xs-12.col-sm-6
+							.feature_content
+								i.fa.fa-cog
+								h5 Full time Support
+								p
+									| Full Time support. Very much helpful and possesive at the same time. With all this in mind you won’t be outdated anytime soon. Really!!
+								button.btn.btn-main  Read More
+						// Col-md-4 Single_feature End
+						.col-md-3.col-xs-12.col-sm-6
+							.feature_content
+								i.fa.fa-desktop
+								h5 Ultra Responsive
+								p
+									| Shadow is as optimized as it gets. No useless wrappers, no double headings, everything is coded with SEO in mind. Content is KING!
+								button.btn.btn-main  Read More
+						// Col-md-4 Single_feature End
+				// Row End
+		// Container End
+	// Service Area End
+	// Portfolio works Start
+	section#portfolio
+		.container
+			.row
+				.col-md-12.col-sm-12.col-xs-12
+					.feature_header.text-center
+						h3.feature_title
+							| Our 
+							b Works
+						h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						.divider
+				// Col-md-12 End
+		#isotope-filter.skew3.text-center
+			a.active(data-filter='*', href='#') All
+			a(data-filter='.identity', href='#') Identity
+			a(data-filter='.web-design', href='#') Web Design
+			a(data-filter='.graphic', href='#') Graphic
+			a(data-filter='.logo', href='#') Photography
+		.clearfix
+		.text-center
+			ul#portfolio_items.portfolio-wrap
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.identity.web-design
+					figure
+						img(src='images/portfolio/p1.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p1.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.logo.graphic
+					figure
+						img(src='images/portfolio/p2.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p2.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.graphic.logo
+					figure
+						img(src='images/portfolio/p3.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p3.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.web-design.identity
+					figure
+						img(src='images/portfolio/p7.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p7.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.logo.web-design
+					figure
+						img(src='images/portfolio/p5.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p5.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.logo.graphic
+					figure
+						img(src='images/portfolio/p6.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p6.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.graphic.identity
+					figure
+						img(src='images/portfolio/p3.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p3.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				li.col-xs-12.col-sm-6.col-md-3.single-portfolio.web-design.graphic
+					figure
+						img(src='images/portfolio/p7.jpg', alt='')
+						figcaption
+							h5 Creative Zoe
+							p.links
+								a(href='portfolio-single.html')
+									i.fa.fa-link
+								a.img-responsive(href='images/portfolio/p7.jpg', data-rel='prettyPhoto')
+									i.fa.fa-plus
+							p.description
+							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		// Container Full End
+	// Portfolio Section End
+	.clearfix
+	// About us start
+	section#about
+		.container
+			.row
+				.col-md-12.col-sm-12.col-xs-12
+					.feature_header.text-center
+						h3.feature_title
+							| What 
+							b We do
+						h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						.divider
+			.row
+				.feature-tab
+					.col-md-2.col-sm-3.col-xs-12
+						ul.nav.nav-tabs.main-tab-list.text-center(role='tablist')
+							li.active(role='presentation')
+								a(href='#home', role='tab', data-toggle='tab')
+									.single-tab
+										.f-icon
+											i.fa.fa-laptop
+									h4 Web
+							li(role='presentation')
+								a(href='#profile', role='tab', data-toggle='tab')
+									.single-tab
+										.f-icon
+											i.fa.fa-send
+									h4 Email Marketing
+							li(role='presentation')
+								a(href='#messages', role='tab', data-toggle='tab')
+									.single-tab
+										.f-icon
+											i.fa.fa-heart
+									h4 Graphics
+							li(role='presentation')
+								a(href='#photo', role='tab', data-toggle='tab')
+									.single-tab
+										.f-icon
+											i.fa.fa-camera
+									h4 Photography
+							li(role='presentation')
+								a(href='#ios', role='tab', data-toggle='tab')
+									.single-tab
+										.f-icon
+											i.fa.fa-send
+									h4 ios application
+					// col-md-12 end
+					.col-md-10.col-sm-9.col-xs-12
+						.tab-content.main-tab-content
+							#home.tab-pane.active(role='tabpanel')
+								.col-md-12.col-sm-9
+									img.img-responsive(src='images/about/web1.png', alt='')
+								.col-md-12.col-sm-9
+									.c-tab
+										h4 Web Design and Development
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
+										br
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
+										br
+										a(href='#')  Learn More
+							#profile.tab-pane(role='tabpanel')
+								.col-md-12.col-sm-9
+									img.img-responsive(src='images/about/browse.png', alt='')
+								.col-md-12.col-sm-9
+									.c-tab
+										h4 Email and Socail Marketing
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
+										br
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
+										br
+										a(href='#')  Learn More
+							#messages.tab-pane(role='tabpanel')
+								.col-md-12.col-sm-9
+									img.img-responsive(src='images/about/web1.png', alt='')
+								.col-md-12.col-sm-9
+									.c-tab
+									h4 Graphics Brand Identity
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
+									br
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
+									br
+									a(href='#')  Learn More
+							#photo.tab-pane(role='tabpanel')
+								.col-md-12.col-sm-9
+									img.img-responsive(src='images/about/graphics.png', alt='')
+								.col-md-12.col-sm-9
+									.c-tab
+									h4 Photography Design
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
+									br
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
+									br
+									a(href='#')  Learn More
+							#ios.tab-pane(role='tabpanel')
+								.col-md-12.col-sm-9
+									img.img-responsive(src='images/about/web1.png', alt='')
+								.col-md-12.col-sm-9
+									.c-tab
+									h4 ios application
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
+									br
+									p
+										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
+									br
+									a(href='#')  Learn More
+	// About us End
+	// Counter Strat
+	section#counter_area
+		.facts
+			.container
+				.col-md-3.col-xs-12.col-sm-6.columns
+					.facts-wrap
+						.graph
+							.graph-left-side
+								.graph-left-container
+									.graph-left-half
+							.graph-right-side
+								.graph-right-container
+									.graph-right-half
+							i.fa.fa-thumbs-o-up.fa-3x.fw
+							.facts-wrap-num
+								span.counter 87
+						h6 Clients
+				.col-md-3.col-xs-12.col-sm-6.columns
+					.facts-wrap
+						.graph
+							.graph-left-side
+								.graph-left-container
+									.graph-left-half
+							.graph-right-side
+								.graph-right-container
+									.graph-right-half
+							i.fa.fa-gift.fa-3x.fw
+							.facts-wrap-num
+								span.counter 25
+						h6 Awards
+				.col-md-3.col-xs-12.col-sm-6.columns
+					.facts-wrap
+						.graph
+							.graph-left-side
+								.graph-left-container
+									.graph-left-half
+							.graph-right-side
+								.graph-right-container
+									.graph-right-half
+							i.fa.fa-check-square-o.fa-3x.fw
+							.facts-wrap-num
+								span.counter 68
+						h6 Projects
+				.col-md-3.col-xs-12.col-sm-6.columns
+					.facts-wrap
+						.graph
+							.graph-left-side
+								.graph-left-container
+									.graph-left-half
+							.graph-right-side
+								.graph-right-container
+									.graph-right-half
+							i.fa.fa-envelope-o.fa-3x.fw
+							.facts-wrap-num
+								span.counter 46
+						h6 Mails
+			// Conatainer End
+		// Fact div ENd
+	// Counter End
+	// bLOG Start
+	section#blog
+	.container
+		.row
+			.col-md-12.col-sm-12.col-xs-12
+				.feature_header.text-center
+					h3.feature_title
+						| Our 
+						b Blog
+					h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					.divider
+			// Col-md-12 End
+		.row
+			.blog-timeline
+				#owl-blog.owl-carousel.owl-theme
+					.item
+						.single_blog
+							.post_img.text-center
+								a(href='blog-single.html')
+									img.img-responsive(src='images/blog/pic3.jpg', alt='')
+								.post-date
+									span 25
+									|  6
+							a(href='blog-single.html')
+								h4 Lorem ipsum dolor sit amet
+							ul.list-inline
+								li
+									i.fa.fa-pencil
+									|  John Smith
+								li
+									i.fa.fa-comments
+									|  12
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
+					.item
+						.single_blog
+							.post_img.text-center
+								a(href='blog-single.html')
+									img.img-responsive(src='images/blog/pic3.jpg', alt='')
+								.post-date
+									span 25
+									|  6
+							a(href='blog-single.html')
+								h4 Lorem ipsum dolor sit amet
+							ul.list-inline
+								li
+									i.fa.fa-pencil
+									|  John Smith
+								li
+									i.fa.fa-comments
+									|  12
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
+					.item
+						.single_blog
+							.post_img.text-center
+								a(href='blog-single.html')
+									img.img-responsive(src='images/blog/pic3.jpg', alt='')
+								.post-date
+									span 25
+									|  6
+							a(href='blog-single.html')
+								h4 Lorem ipsum dolor sit amet
+							ul.list-inline
+								li
+									i.fa.fa-pencil
+									|  John Smith
+								li
+									i.fa.fa-comments
+									|  12
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
+					.item
+						.single_blog
+							.post_img.text-center
+								a(href='blog-single.html')
+									img.img-responsive(src='images/blog/pic3.jpg', alt='')
+								.post-date
+									span 25
+									|  6
+							a(href='blog-single.html')
+								h4 Lorem ipsum dolor sit amet
+							ul.list-inline
+								li
+									i.fa.fa-pencil
+									|  John Smith
+								li
+									i.fa.fa-comments
+									|  12
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.
+			// blog Timeline End
+	// bLOG End
+	section#contact
+		.container
+			.row
+				.col-md-12.col-sm-12.col-xs-12
+					.feature_header.text-center
+						h3.feature_title
+							| Keep In 
+							b touch
+						h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+						.divider
+			.row
+				.contact_full
+					.col-md-6.left
+						.left_contact
+							form(action='role')
+								.form-level
+									input#name.input-block(name='name', placeholder='Name', value='', type='text')
+									span.form-icon.fa.fa-user
+								.form-level
+									input#mail.input-block(name='email', placeholder='Email', value='', type='email')
+									span.form-icon.fa.fa-envelope-o
+								.form-level
+									input#phone.input-block(name='name', placeholder='Phone', value='', type='text')
+									span.form-icon.fa.fa-phone
+					.col-md-6.right
+						.form-level
+							textarea#messege.textarea-block(name='', rows='5', placeholder='message')
+							span.form-icon.fa.fa-pencil
+					.col-md-12.text-center
+						button.btn.btn-main.featured Submit Now

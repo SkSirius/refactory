@@ -35,12 +35,14 @@ Version:1.1 */
 
 html{
     overflow-x: hidden !important;
+	height: 100%;
 }
 body{
     line-height:1.5em;
      border: 0;
     margin: 0 auto;
     padding: 0;
+	height: 100%;
 }
 
 ol,ul,dl{
@@ -178,6 +180,10 @@ a{
 }
 #footer{
     padding: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
 
  /*Divider
@@ -527,6 +533,8 @@ ul.navbar-nav > .active > a{
     animation: bounceInLeft 1s ease-in-out 500ms both;
 }
 
+.global-wrapper { position: relative; min-height: 100%; }
+.app-main-wrapper { padding-top: 90px; padding-bottom: 446px; }
 
 /* Service  Area
 ============================================================= */
