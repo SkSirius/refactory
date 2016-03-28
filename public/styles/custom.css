@@ -2580,7 +2580,7 @@ iframe{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.video-text .panel-group .p2.active{
+.video-text .panel-group .p2.active {
     background:#EE3B24;
     color: #fff;
     padding: 7px 0px;
@@ -2590,6 +2590,10 @@ iframe{
 
 /*About details
 ==========================*/
+
+#about .tech-stack { margin-top: 30px; }
+#about .tech-stack h4 { margin-bottom: 30px; }
+#about .tech-stack.mean img { padding-right: 20px; }
 
 #about-details .feature_sub, .single-progress label, #about-details .feature_title{
     color: #fff!important;
