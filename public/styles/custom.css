@@ -534,10 +534,14 @@ ul.navbar-nav > .active > a{
 }
 
 .global-wrapper { position: relative; min-height: 100%; }
-.app-main-wrapper { padding-top: 90px; padding-bottom: 446px; }
+.app-main-wrapper { padding-top: 90px; padding-bottom: 250px; }
 
 /* Service  Area
 ============================================================= */
+
+.main_feature .feature_content p {
+	min-height: 120px;
+}
 
 .main_feature{
     margin: 40px 0px;
