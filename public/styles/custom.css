@@ -1730,6 +1730,8 @@ padding: 8px 15px;
     border-bottom: 1px solid #0F0F0F;
     background: none repeat scroll 0% 0% #333;
     color: #AAA;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .footer_b{
     background: #222; 
@@ -1751,20 +1753,20 @@ padding: 8px 15px;
 }
 .menu_head:after{
     position: absolute;
-    left: 18px;
+    left: 565px;
     width: 55px;
     height: 1px;
     content: "";
-    top: 49px;
+    top: 55px;
 }
 .menu_head:before{
-    position: absolute;
-    left: 32px;
+    position: relative;
+    left: 65px;
     width: 24px;
     height: 5px;
     content: "";
     display: inline-block;
-    top: 47px;
+    top: 25px;
 }
 
 .footer_mid ul li{

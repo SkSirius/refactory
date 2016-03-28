@@ -248,7 +248,10 @@ figcaption .links a:hover{
     background: none repeat scroll 0% 0% #EE3B24;
 }
 
-.footer_menu_contact li i,.footer_menu_contact li span:hover {
+.footer_menu_contact span { display: inline-block; margin-right: 15px; cursor: pointer; }
+.footer_menu_contact span span { display: inline-block; margin-left: 10px; }
+
+.footer_menu_contact i, .footer_menu_contact span:hover {
     color:#EE3B24;
 }
 

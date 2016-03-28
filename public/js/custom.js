@@ -90,118 +90,28 @@ jQuery(function($) {
   });
 
   /* ----------------------------------------------------------- */
- /*ISotope Portfolio
- /* ----------------------------------------------------------- */   
-    
-      var $container = $('.portfolio-wrap');
-      var $filter = $('#isotope-filter');
-      // Initialize isotope 
-      $container.isotope({
-          filter: '*',
-          layoutMode: 'fitRows',
-          animationOptions: {
-              duration: 750,
-              easing: 'linear'
-          }
-      });
-      // Filter items when filter link is clicked
-      $filter.find('a').click(function () {
-          var selector = $(this).attr('data-filter');
-          $filter.find('a').removeClass('current');
-          $(this).addClass('current');
-          $container.isotope({
-              filter: selector,
-              animationOptions: {
-                  animationDuration: 750,
-                  easing: 'linear',
-                  queue: false,
-              }
-          });
-          return false;
-      }); 
-
-
-  // Portfolio Isotope
-    
-    
-    var container = $('.portfolio-wrap'); 
-    
-      function splitColumns() { 
-        var winWidth = $(window).width(), 
-          columnNumb = 1;
-        
-        
-        if (winWidth > 1024) {
-          columnNumb = 4;
-        } else if (winWidth > 900) {
-          columnNumb = 2;
-        } else if (winWidth > 479) {
-          columnNumb = 2;
-        } else if (winWidth < 479) {
-          columnNumb = 1;
-        }
-        
-        return columnNumb;
-      }   
-      
-      function setColumns() { 
-        var winWidth = $(window).width(), 
-          columnNumb = splitColumns(), 
-          postWidth = Math.floor(winWidth / columnNumb);
-        
-        container.find('.portfolio-box').each(function () { 
-          $(this).css( { 
-            width : postWidth + 'px' 
-          });
-        });
-      }   
-      
-      function setProjects() { 
-        setColumns();
-        container.isotope('reLayout');
-      }   
-      
-      container.imagesLoaded(function () { 
-        setColumns();
-      });
-      
-    
-      $(window).bind('resize', function () { 
-        setProjects();      
-      });
-
-   
-   
-   
-   
-
-  /* ----------------------------------------------------------- */
   /* Team Carousel
   /* ----------------------------------------------------------- */
 
-  $("#owl-demo").owlCarousel({
-  
-  navigation : true, // Show next and prev buttons
-  // navigationText: ["prev","next"], 
-   navigationText: [
-      "<i class='fa fa-angle-left'></i>",
-      "<i class='fa fa-angle-right'></i>"
-      ],
-  slideSpeed : 300,
-  paginationSpeed : 400,
-  autoPlay: true,  
-  items : 4,
-  itemsDesktop:[1199,4],  
-  itemsDesktopSmall:[979,3],  //As above.
-  itemsTablet:[768,3],    //As above.
-  // itemsTablet:[640,2],   
-  itemsMobile:[479,1],    //As above
-  goToFirst: true,    //Slide to first item if autoPlay reach end
-  goToFirstSpeed:1000 
-  });
-
-
-
+	$("#owl-demo").owlCarousel({
+		navigation : true, // Show next and prev buttons
+		// navigationText: ["prev","next"], 
+		navigationText: [
+			"<i class='fa fa-angle-left'></i>",
+			"<i class='fa fa-angle-right'></i>"
+			],
+		slideSpeed : 300,
+		paginationSpeed : 400,
+		autoPlay: false,  
+		items : 1,
+		itemsDesktop:[500,1],  
+		itemsDesktopSmall:[979,1],  //As above.
+		itemsTablet:[768,1],    //As above.
+		// itemsTablet:[640,2],   
+		itemsMobile:[479,1],    //As above
+		goToFirst: true,    //Slide to first item if autoPlay reach end
+		goToFirstSpeed:1000 
+	});
 
     //Testimonial
 

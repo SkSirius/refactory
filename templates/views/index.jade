@@ -103,9 +103,8 @@ block content
 						// Col-md-4 Single_feature End
 				// Row End
 		// Container End
-	// Service Area End
-	// Portfolio works Start
-	section#portfolio
+		// Service Area End
+	section#team
 		.container
 			.row
 				.col-md-12.col-sm-12.col-xs-12
@@ -116,113 +115,22 @@ block content
 						h4.feature_sub This is what we do. This is how we do. This is what we are proud of!
 						.divider
 				// Col-md-12 End
-		#isotope-filter.skew3.text-center
-			a.active(data-filter='*', href='#') All
-			a(data-filter='.identity', href='#') Identity
-			a(data-filter='.web-design', href='#') Web Design
-			a(data-filter='.graphic', href='#') Graphic
-			a(data-filter='.logo', href='#') Photography
-		.clearfix
-		.text-center
-			ul#portfolio_items.portfolio-wrap
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.identity.web-design
-					figure
-						img(src='images/portfolio/p1.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p1.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.logo.graphic
-					figure
-						img(src='images/portfolio/p2.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p2.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.graphic.logo
-					figure
-						img(src='images/portfolio/p3.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p3.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.web-design.identity
-					figure
-						img(src='images/portfolio/p7.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p7.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.logo.web-design
-					figure
-						img(src='images/portfolio/p5.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p5.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.logo.graphic
-					figure
-						img(src='images/portfolio/p6.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p6.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.graphic.identity
-					figure
-						img(src='images/portfolio/p3.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p3.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				li.col-xs-12.col-sm-6.col-md-4.single-portfolio.web-design.graphic
-					figure
-						img(src='images/portfolio/p7.jpg', alt='')
-						figcaption
-							h5 Creative Zoe
-							p.links
-								a(href='/portfolio/1')
-									i.fa.fa-link
-								a.img-responsive(href='images/portfolio/p7.jpg', data-rel='prettyPhoto')
-									i.fa.fa-plus
-							p.description
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-		// Container Full End
-	// Portfolio Section End
+				// Col-md-12 End
+				#owl-demo.owl-carousel.owl-theme.team-items
+					.item
+						h4 1
+					.item
+						h4 2
+					.item
+						h4 3
+					.item
+						h4 4
+					.item
+						h4 5
+					.item
+						h4 6
+		// Conatiner Team end
+	// Section TEam End
 	.clearfix
 	// About us start
 	section#about
@@ -235,108 +143,17 @@ block content
 							b We do
 						h4.feature_sub Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 						.divider
-			.row
-				.feature-tab
-					.col-md-2.col-sm-3.col-xs-12
-						ul.nav.nav-tabs.main-tab-list.text-center(role='tablist')
-							li.active(role='presentation')
-								a(href='#home', role='tab', data-toggle='tab')
-									.single-tab
-										.f-icon
-											i.fa.fa-laptop
-									h4 Web
-							li(role='presentation')
-								a(href='#profile', role='tab', data-toggle='tab')
-									.single-tab
-										.f-icon
-											i.fa.fa-send
-									h4 Email Marketing
-							li(role='presentation')
-								a(href='#messages', role='tab', data-toggle='tab')
-									.single-tab
-										.f-icon
-											i.fa.fa-heart
-									h4 Graphics
-							li(role='presentation')
-								a(href='#photo', role='tab', data-toggle='tab')
-									.single-tab
-										.f-icon
-											i.fa.fa-camera
-									h4 Photography
-							li(role='presentation')
-								a(href='#ios', role='tab', data-toggle='tab')
-									.single-tab
-										.f-icon
-											i.fa.fa-send
-									h4 ios application
-					// col-md-12 end
-					.col-md-10.col-sm-9.col-xs-12
-						.tab-content.main-tab-content
-							#home.tab-pane.active(role='tabpanel')
-								.col-md-12.col-sm-9
-									img.img-responsive(src='images/about/web1.png', alt='')
-								.col-md-12.col-sm-9
-									.c-tab
-										h4 Web Design and Development
-										p
-											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
-										br
-										p
-											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
-										br
-										a(href='#')  Learn More
-							#profile.tab-pane(role='tabpanel')
-								.col-md-12.col-sm-9
-									img.img-responsive(src='images/about/browse.png', alt='')
-								.col-md-12.col-sm-9
-									.c-tab
-										h4 Email and Socail Marketing
-										p
-											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
-										br
-										p
-											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
-										br
-										a(href='#')  Learn More
-							#messages.tab-pane(role='tabpanel')
-								.col-md-12.col-sm-9
-									img.img-responsive(src='images/about/web1.png', alt='')
-								.col-md-12.col-sm-9
-									.c-tab
-									h4 Graphics Brand Identity
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
-									br
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
-									br
-									a(href='#')  Learn More
-							#photo.tab-pane(role='tabpanel')
-								.col-md-12.col-sm-9
-									img.img-responsive(src='images/about/graphics.png', alt='')
-								.col-md-12.col-sm-9
-									.c-tab
-									h4 Photography Design
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
-									br
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
-									br
-									a(href='#')  Learn More
-							#ios.tab-pane(role='tabpanel')
-								.col-md-12.col-sm-9
-									img.img-responsive(src='images/about/web1.png', alt='')
-								.col-md-12.col-sm-9
-									.c-tab
-									h4 ios application
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus praesentium dolore sequi excepturi recusandae reprehenderit, distinctio.
-									br
-									p
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolorum, quisquam eum eaque. Excepturi nisi necessitatibus, inventore explicabo corporis expedita fugit aspernatur harum reprehenderit temporibus, pariatur esse laborum qui quisquam.
-									br
-									a(href='#')  Learn More
+			.row.text-center
+				.col-md-6 
+					h4 .NET Framework Stack
+					img(src='/images/portfolio/net.png')
+				.col-md-6 
+					h4 MEAN Stack
+					img(src='/images/portfolio/mean.png')
+			.row.text-center
+				.col-md-6.col-md-offset-3 
+					h4 Mobile Development
+					img(src='/images/portfolio/ionic.jpg')
 	// About us End
 	// Counter Strat
 	section#counter_area
