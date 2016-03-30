@@ -5,11 +5,11 @@ block content
 		.container
 			.row
 				.blog-header.text-center
-					h2 Single Blog Details
-					ul.breadcrumb
-						li home
-						li blog
-						li single post details
+					h2= data.post.title
+					if data.post.categories && data.post.categories.length
+						ul.breadcrumb
+							each cat in data.post.categories
+								li= cat.name
 	section#blog-single
 		.container
 			// Portfolio item slider start
@@ -117,7 +117,7 @@ block content
 				// comments End
 				.blog-form
 					h4
-						| Leave for a 
+						| Leave a
 						span comment 
 					hr
 					.form-group

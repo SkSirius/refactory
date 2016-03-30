@@ -1164,14 +1164,14 @@ padding: 8px 15px;
 #owl-demo .item img{
   margin-bottom: 25px;
 }
-#team  .owl-theme .owl-controls .owl-buttons{
+#portfolio  .owl-theme .owl-controls .owl-buttons{
     padding: 0px;
 }
 .owl-carousel {
     display: block!important;
 }
 
- #team .owl-theme .owl-controls .owl-buttons .owl-prev {
+ #portfolio .owl-theme .owl-controls .owl-buttons .owl-prev {
     width: 50px;
     height: 50px;
     font-size: 35px;
@@ -1183,7 +1183,7 @@ padding: 8px 15px;
     top: 30%;
     opacity:1;
 }
-#team .owl-theme .owl-controls .owl-buttons .owl-next {
+#portfolio .owl-theme .owl-controls .owl-buttons .owl-next {
    width: 50px;
    height: 50px;
    font-size: 35px;
@@ -1195,8 +1195,8 @@ padding: 8px 15px;
     top: 30%;
     opacity:1;
 }
- #team .owl-theme .owl-controls .owl-buttons .owl-prev
-,#team .owl-theme .owl-controls .owl-buttons .owl-next{
+ #portfolio .owl-theme .owl-controls .owl-buttons .owl-prev
+,#portfolio .owl-theme .owl-controls .owl-buttons .owl-next{
     -webkit-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;

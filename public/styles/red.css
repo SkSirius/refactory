@@ -85,7 +85,8 @@ ul.navbar-nav > .active> a:hover{
     background-color:#EE3B24;
 }
 
-
+#blog-single article a { color: #EE3B24; }
+#blog-single article a:hover { color: #B22C2C; }
 /*service area
 =========================*/
 .feature_content i,.feature_content h5,.feature_content a{
@@ -207,13 +208,13 @@ figcaption .links a:hover{
 .overlay-effect{
     background: rgba(209,66,51,0.95);
 }
- #team .owl-theme .owl-controls .owl-buttons .owl-prev
-,#team .owl-theme .owl-controls .owl-buttons .owl-next{
+ #portfolio .owl-theme .owl-controls .owl-buttons .owl-prev
+,#portfolio .owl-theme .owl-controls .owl-buttons .owl-next{
     background: #EE3B24;
     color: #fff;
 }
- #team .owl-theme .owl-controls .owl-buttons .owl-prev:hover
-,#team .owl-theme .owl-controls .owl-buttons .owl-next:hover {
+ #portfolio .owl-theme .owl-controls .owl-buttons .owl-prev:hover
+,#portfolio .owl-theme .owl-controls .owl-buttons .owl-next:hover {
    background: #ccc;
    color: #222;
 }
@@ -307,9 +308,10 @@ textarea:hover {
     background: none repeat scroll 0% 0% #EE3B24;
 }
 
-.read-more a, 
+.read-more a { color: #EE3B24; }
+.read-more a:hover { color: #B22C2C; }
 .blog-desc .post-meta-links li a{
-    color: #EE3B24;
+    color:  #959595;
 }
 .tags1 a{
     padding: 6px 15px;

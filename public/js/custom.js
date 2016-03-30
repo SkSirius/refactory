@@ -40,6 +40,10 @@ jQuery(function($) {
           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			
+			$("#bs-example-navbar-collapse-1 li").removeClass('active');
+			$($('a[href="/' + this.hash  + '"]').parents('li')[0]).addClass('active');
+			
             if (target.length) {
               $('html,body').animate({
                 scrollTop: target.offset().top - 40
@@ -50,7 +54,20 @@ jQuery(function($) {
         });
 
    
-
+ $(document).ready(function() {
+	var hash = window.location.hash;
+	var a = {};
+	if(hash.length == 0) {
+		hash = window.location.pathname;
+		a = $($('a[href="' + hash  + '"]')[0]);
+	} else {
+		hash = "/" + hash;
+		a = $('a[href="' + hash  + '"]');
+	}
+	
+	$("#bs-example-navbar-collapse-1 li").removeClass('active');
+	$(a.parents('li')[0]).addClass('active');
+ });
 
  
   // accordian

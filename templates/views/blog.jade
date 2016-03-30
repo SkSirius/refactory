@@ -35,7 +35,7 @@ mixin post(post)
 						i.fa.fa-comments
 					| 23
 		if post.image.exists
-			img(src=post._.image.fit(300,300)).img.text-center
+			img(src=post._.image.fit(800,400)).img.text-center
 		p!= post.content.brief
 		p
 		if post.content.extended
