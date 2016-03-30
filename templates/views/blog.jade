@@ -2,7 +2,7 @@ extends ../layouts/default
 
 mixin post(post)
 	.blog-desc(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h4: a(href='/blog/post/' + post.slug)= post.title
+		h1: a(href='/blog/post/' + post.slug)= post.title
 		ul.post-meta-links.list-inline
 			if post.publishedDate
 				li
@@ -26,9 +26,9 @@ mixin post(post)
 						each cat, i in post.categories
 							a(href='/blog/' + cat.key)= cat.name
 							if i < post.categories.length - 1
-								| , 
+								| ,  
 							else
-								|  
+								| 
 			li
 				a(href='#')
 					span
