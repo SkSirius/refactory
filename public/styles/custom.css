@@ -2596,8 +2596,12 @@ iframe{
 ==========================*/
 
 #about .tech-stack { margin-top: 30px; }
+#about .tech-stack img { max-height: 200px; }
 #about .tech-stack h4 { margin-bottom: 30px; }
-#about .tech-stack.mean img { padding-right: 20px; }
+#about .tech-stack .desc-item { margin-top: 50px; }
+#about .tech-stack .mobile img { min-height: 200px; }
+#about .tech-stack .mean img { padding-right: 20px; max-height: 95px; }
+
 
 #about-details .feature_sub, .single-progress label, #about-details .feature_title{
     color: #fff!important;
