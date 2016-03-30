@@ -218,6 +218,7 @@ figcaption .links a:hover{
    color: #222;
 }
 
+.team-items .item .port-link a { color: #EE3B24; }
 
 /*testimonial
 =========================*/
