@@ -286,7 +286,10 @@ block content
 							.single_blog
 								.post_img.text-center
 									a(href='/blog/post/' + post.slug)
-										img(src=post._.image.fit(300,300)).img-responsive
+										if post.image && post.image.url.length > 0
+											img(src=post._.image.fit(300,300)).img-responsive
+										else
+											img(src='/images/bg/pexels-photo.jpg')
 									.post-date
 										span #{post._.publishedDate.format('DD')}
 										|  #{post._.publishedDate.format('MMMM')}
@@ -313,22 +316,37 @@ block content
 						h4.feature_sub Have an idea? Need some extra help? Contact us and let's jump into details.
 						.divider
 			.row
-				.contact_full
-					.col-md-6.left
-						.left_contact
-							form(action='role')
-								.form-level
-									input#name.input-block(name='name', placeholder='Name', value='', type='text')
-									span.form-icon.fa.fa-user
-								.form-level
-									input#mail.input-block(name='email', placeholder='Email', value='', type='email')
-									span.form-icon.fa.fa-envelope-o
-								.form-level
-									input#phone.input-block(name='name', placeholder='Phone', value='', type='text')
-									span.form-icon.fa.fa-phone
-					.col-md-6.right
-						.form-level
-							textarea#messege.textarea-block(name='', rows='5', placeholder='message')
-							span.form-icon.fa.fa-pencil
+				if enquirySubmitted
 					.col-md-12.text-center
-						button.btn.btn-main.featured Submit Now
+						h4 Thanks for getting in touch. We will contact you shortly.
+				else
+					.contact_full
+						form(action='/#contact', method='post')
+							.validation-summary.text-center
+								if validationErrors.name
+									label.has-error.text-danger
+										| Name is required. 
+								if validationErrors.email
+									label.has-error.text-danger
+										| Email is required. 
+								if validationErrors.message
+									label.has-error.text-danger
+										| Message is required. 
+							.col-md-6.left
+								.left_contact
+									input(type='hidden', name='action', value='/#contact')
+									.form-level.form-group(class=validationErrors.name ? 'has-error' : null)
+										input#name.form-control.input-block(name='name.full', value=formData['name.full'], placeholder='Name', type='text')
+										span.form-icon.fa.fa-user
+									.form-level.form-group(class=validationErrors.email ? 'has-error' : null)
+										input#mail.form-control.input-block(name='email', value=formData.email, placeholder='Email', type='email')
+										span.form-icon.fa.fa-envelope-o
+									.form-level.form-group
+										input#phone.form-control.input-block(name='phone', value=formData.phone, placeholder='Phone (optional)', type='text')
+										span.form-icon.fa.fa-phone
+							.col-md-6.right
+								.form-level.form-group(class=validationErrors.message ? 'has-error' : null)
+									textarea#messege.form-control.textarea-block(name='message', rows='7', placeholder='message')= formData.message
+									span.form-icon.fa.fa-pencil
+							.col-md-12.text-center
+								button(type='submit').btn.btn-main.featured Submit Now
