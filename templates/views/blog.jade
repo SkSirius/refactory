@@ -29,12 +29,6 @@ mixin post(post)
 								| ,  
 							else
 								| 
-			li
-				a(href='#')
-					span
-						i.fa.fa-comments
-					| 23
-		if post.image.exists
 			img(src=post._.image.fit(800,400)).img.text-center
 		p!= post.content.brief
 		p
