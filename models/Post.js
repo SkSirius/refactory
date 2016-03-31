@@ -21,7 +21,9 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 }
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true }
+	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	tags: { type: Types.Relationship, ref: 'Tag', many: true },
+	comments: { type: Types.Relationship, ref: 'Comment', index: true }
 });
 
 Post.schema.virtual('content.full').get(function() {

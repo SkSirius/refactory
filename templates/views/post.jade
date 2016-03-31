@@ -15,7 +15,7 @@ block content
 			// Portfolio item slider start
 			.col-lg-8.col-md-8.col-sm-12.col-xs-12
 				article
-					p: a(href='/blog') &larr; back to the blog
+					p: a(href='/blog/all') &larr; back to the blog
 					hr
 					if !data.post
 						h2 Invalid Post.
@@ -43,11 +43,10 @@ block content
 				.clearfix
 				.tags1
 					p Tags: 
-					a(href='#') Web
-					&nbsp;
-					a(href='#') graphics
-					&nbsp;
-					a(href='#') Seo
+						if data.post.tags && data.post.tags.length
+							each tag in data.post.tags
+								a(href='#')= tag.name 
+								&nbsp;
 				.share1
 					h4 Share this :
 					ul.social-contact.list-inline
@@ -72,52 +71,31 @@ block content
 					h4 About the Author
 					hr
 					.well
-						img.img-responsive(src='/images/team/pic1.jpg', alt='alt')
-						p
-							| Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.
+						img(src=data.post.author._.avatar.fit(90,90)).img-responsive
+						p!= data.post.author.description
 				// About auther end
 				// comments start
 				.comments
 					h4 Comments
 					hr
-					ul.media-list
-						li.media
-							a.media-left(href='#')
-								img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
-							.media-body
-								h4.media-heading
-									| Jhohn Milton
-									span
-										i 2 july 2014
-								p
-									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
-								a(href='#') Reply
-						li.media.middle
-							a.media-left(href='#')
-								img.img-responsive(src='/images/team/pic1.jpg', alt='alt')
-							.media-body
-								h4.media-heading
-									| Rack Hasilton 
-									span
-										i 2 july 2014
-								p
-									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
-								a(href='#') Reply
-						li.media
-							a.media-left(href='#')
-								img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
-							.media-body
-								h4.media-heading
-									| Jhohn Milton
-									span
-										i 2 july 2014
-								p
-									| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
-								a(href='#') Reply
+					if data.post.comments && data.post.comments.length
+						ul.media-list
+							each comment in data.post.comments
+								li.media
+									a.media-left(href='#')
+										img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
+									.media-body
+										h4.media-heading
+											| Jhohn Milton
+											span
+												i 2 july 2014
+										p
+											| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
+										a(href='#') Reply
 				// comments End
 				.blog-form
 					h4
-						| Leave a
+						| Leave a 
 						span comment 
 					hr
 					.form-group
@@ -140,79 +118,44 @@ block content
 				// sidebar start
 				.col-lg-4.col-md-4.col-sm-12.col-xs-12
 					.blog-sidebar
+						if data.posts && data.posts.length
 						.recent-post
 							h4 Latest posts
 							hr
 							ul
-								li.col-md-12.col-sm-4
-									.single-post
-										a(href='#')
-											img.img-responsive(src='/images/blog/pic7.jpg', alt='post-img')
-										p Ellentesque eleifend condimentum tellus.
-									span 3 days ago
-								li.col-md-12.col-sm-4
-									.single-post
-										a(href='#')
-											img.img-responsive(src='/images/blog/pic6.jpg', alt='post-img')
-										p Ellentesque eleifend condimentum tellus.
-									span 3 days ago
-								li.col-md-12.col-sm-4
-									.single-post
-										a(href='#')
-											img.img-responsive(src='/images/blog/pic10.jpg', alt='post-img')
-										p Ellentesque eleifend condimentum tellus.
-									span 3 days ago
+								each post in data.posts
+									li.col-md-12.col-sm-4
+										.single-post
+											a(href='/blog/post/' + post.slug)
+												if post.image.url && post.image.url.length
+													img(src=post._.image.fit(300,300), alt='post-img').img-responsive
+												h4!= post.title
+											span #{post._.publishedDate.format('MMMM Do, YYYY')}
 						// Recent posts end
 						.clearfix
 						.blog-catagory
-							h4 Blog catagories
+							h4 Blog categories
 							ul
 								li
-									a(href='#')
+									a(href='/blog/all', class=!data.category ? 'active' : false)
 										i.fa.fa-angle-right
-										|  Web Design 
+										|  All Categories
 										span.badge 14
-								li
-									a(href='#')
-										i.fa.fa-angle-right
-										| Social Media 
-										span.badge 23
-								li
-									a(href='#')
-										i.fa.fa-angle-right
-										|  Online Gaming 
-										span.badge 43
-								li
-									a(href='#')
-										i.fa.fa-angle-right
-										| Technology 
-										span.badge 27
-								li
-									a(href='#')
-										i.fa.fa-angle-right
-										| Photography 
-										span.badge 44
-								li
-									a(href='#')
-										i.fa.fa-angle-right
-										| Economics 
-										span.badge 54
-						// blog catagory end
-						.clearfix
-						.right-tags
-							h4 Tags
-							hr
-							.footer_menu.tags
-								a(href='#')  Design
-								a(href='#')  User Interface
-								a(href='#')  Graphics
-								a(href='#')  Web Design
-								a(href='#')  Development
-								a(href='#')  Asp.net
-								a(href='#')  Bootstrap
-								a(href='#')  Joomla
-								a(href='#')  SEO
-								a(href='#')  Wordepress
+								each cat in data.categories
+									li
+										a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false)
+											i.fa.fa-angle-right
+											= cat.name
+											span.badge= cat.postCount
+								// blog catagory end
+								.clearfix
+								if data.tags.length
+									.right-tags
+										h4 Tags
+										hr
+										.footer_menu.tags
+											each tag in data.tags
+												a(href='/blog/all/' + tag.name)= tag.name
 					// blog sidebar end
 				// sidebar end
 		// Portfolio item row end

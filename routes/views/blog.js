@@ -9,12 +9,25 @@ exports = module.exports = function(req, res) {
 	// Init locals
 	locals.section = 'blog';
 	locals.filters = {
-		category: req.params.category
+		category: req.params.category,
+		tag: req.params.tag
 	};
 	locals.data = {
 		posts: [],
-		categories: []
+		categories: [],
+		tags: [],
+		category: "all"
 	};
+	
+	//Load all tags
+	view.on('init', function(next) {
+		keystone.list('Tag').model.find().sort('name').exec(function(err, results) {
+			if(err || !results.length) return next(err);
+			
+			locals.data.tags = results;
+			next();
+		});
+	});
 	
 	// Load all categories
 	view.on('init', function(next) {
@@ -46,7 +59,7 @@ exports = module.exports = function(req, res) {
 	// Load the current category filter
 	view.on('init', function(next) {
 		
-		if (req.params.category) {
+		if (req.params.category && locals.filters.category != "all") {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function(err, result) {
 				locals.data.category = result;
 				next(err);
@@ -54,7 +67,20 @@ exports = module.exports = function(req, res) {
 		} else {
 			next();
 		}
+	});
+	
+	//Load current tag filter
+	view.on('init', function(next) {
 		
+		if (req.params.tag) {
+			keystone.list('Tag').model.findOne({ name: locals.filters.tag }).exec(function(err, result) {
+				locals.data.tag = result;
+				console.log(result);
+				next(err);
+			});
+		} else {
+			next();
+		}
 	});
 	
 	// Load the posts
@@ -69,20 +95,22 @@ exports = module.exports = function(req, res) {
 				}
 			})
 			.sort('-publishedDate')
-			.populate('author categories');
+			.populate('author categories tags');
 		
-		if (locals.data.category) {
+		if (locals.data.category && req.params.category != "all") {
 			q.where('categories').in([locals.data.category]);
+		}
+		
+		if (locals.data.tag) {
+			q.where('tags').in([locals.data.tag]);
 		}
 		
 		q.exec(function(err, results) {
 			locals.data.posts = results;
 			next(err);
 		});
-		
 	});
 	
 	// Render the view
 	view.render('blog');
-	
 };

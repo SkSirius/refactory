@@ -51,7 +51,7 @@ block content
 			if filters.category && !data.category
 				h3.text-muted Invalid Category.
 			else
-				if data.posts.results.length
+				if data.posts && data.posts.results && data.posts.results.length
 					if data.posts.totalPages > 1
 						h4.text-weight-normal Showing 
 							strong #{data.posts.first}
@@ -81,7 +81,7 @@ block content
 							else
 								li.disabled: a(href='?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
 				else
-					if data.category
+					if data.category && data.category != "all"
 						h4.text-muted There are no posts in the category #{data.category.name}.
 					else
 						h4.text-muted There are no posts yet.
@@ -93,7 +93,7 @@ block content
 					h4 Blog categories
 					ul
 						li
-							a(href='/blog', class=!data.category ? 'active' : false)
+							a(href='/blog/all', class=!data.category ? 'active' : false)
 								i.fa.fa-angle-right
 								|  All Categories
 								span.badge 14
@@ -102,20 +102,13 @@ block content
 								a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false)
 									i.fa.fa-angle-right
 									= cat.name
-									span.badge 14
+									span.badge= cat.postCount
 				// blog catagory end
 				.clearfix
-				.right-tags
-					h4 Tags
-					hr
-					.footer_menu.tags
-						a(href='#')  Design
-						a(href='#')  User Interface
-						a(href='#')  Graphics
-						a(href='#')  Web Design
-						a(href='#')  Development
-						a(href='#')  Asp.net
-						a(href='#')  Bootstrap
-						a(href='#')  Joomla
-						a(href='#')  SEO
-						a(href='#')  Wordepress
+				if data.tags.length
+					.right-tags
+						h4 Tags
+						hr
+						.footer_menu.tags
+							each tag in data.tags
+								a(href='/blog/all/' + tag.name)= tag.name
