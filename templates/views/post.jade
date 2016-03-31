@@ -140,7 +140,7 @@ block content
 									a(href='/blog/all', class=!data.category ? 'active' : false)
 										i.fa.fa-angle-right
 										|  All Categories
-										span.badge 14
+										span.badge= data.allCount
 								each cat in data.categories
 									li
 										a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false)

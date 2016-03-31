@@ -12,7 +12,8 @@ exports = module.exports = function(req, res) {
 		post: req.params.post
 	};
 	locals.data = {
-		posts: []
+		posts: [],
+		allCount: 0
 	};
 	
 	//Load all tags
@@ -37,6 +38,10 @@ exports = module.exports = function(req, res) {
 			
 			// Load the counts for each category
 			async.each(locals.data.categories, function(category, next) {
+				
+				keystone.list('Post').model.count(function(err, count) {
+					locals.data.allCount = count;
+				});
 				
 				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function(err, count) {
 					category.postCount = count;
