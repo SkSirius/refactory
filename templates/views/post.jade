@@ -78,40 +78,21 @@ block content
 				.comments
 					h4 Comments
 					hr
-					if data.post.comments && data.post.comments.length
-						ul.media-list
-							each comment in data.post.comments
-								li.media
-									a.media-left(href='#')
-										img.img-responsive(src='/images/team/pic5.jpg', alt='alt')
-									.media-body
-										h4.media-heading
-											| Jhohn Milton
-											span
-												i 2 july 2014
-										p
-											| Odit nostrum et debitis reiciendis ullam quam corrupti modi, porro similique, voluptatem cumque tempore, ratione libero harum pariatur error veritatis aliquid laboriosam.
-										a(href='#') Reply
-				// comments End
-				.blog-form
-					h4
-						| Leave a 
-						span comment 
-					hr
-					.form-group
-						.col-md-6
-							input.form-control(type='text', placeholder='Name')
-					.form-group
-						.col-md-6
-							input.form-control(type='email', placeholder='Email')
-					.form-group
-						.col-md-12
-							textarea.form-control(name='comment', id='', cols='30', rows='7', placeholder='Message')
-					.form-group
-						.col-md-12
-							.text-center
-								button.btn.btn-main  Submit Now 
-				// blog footer end
+					#disqus_thread
+					script.
+						var disqus_config = function () {
+						this.page.url = 'http://refactory.herokuapp.com/blog/post'; // Replace PAGE_URL with your page's canonical URL variable
+						this.page.identifier = '#{data.post._id}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						};
+					
+						(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+
+							s.src = '//refactory.disqus.com/embed.js';
+
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+						})();
 			// left blog part end
 			// Right Blog part row start
 			.row
