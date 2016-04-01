@@ -45,10 +45,10 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 		new keystone.Email('enquiry-notification').send({
 			to: admins,
 			from: {
-				name: 'refactory',
-				email: 'contact@refactory.com'
+				name: 'compactory',
+				email: 'info@compactory.com'
 			},
-			subject: 'New Enquiry for refactory',
+			subject: 'New Enquiry for compactory',
 			enquiry: enquiry
 		}, callback);
 		
