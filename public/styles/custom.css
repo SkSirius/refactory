@@ -1365,7 +1365,7 @@ padding: 8px 15px;
 
 #counter_area{
     color: #FFF;
-     background: url('../images/bg/bg-success6.jpg') no-repeat fixed 50% 0px / cover transparent;
+     background: url('http://res.cloudinary.com/sksirius/image/upload/v1459449186/bg-success6_wjysch.jpg') no-repeat fixed 50% 0px / cover transparent;
     position: relative; 
     margin: 0 auto;
     width: 100%;
@@ -1931,7 +1931,7 @@ padding: 8px 15px;
     padding: 55px 0px;
 }
 #banner{
-    background: url("../images/bg/pexels-photo.jpg")no-repeat;
+    background: url("http://res.cloudinary.com/sksirius/image/upload/v1459449193/pexels-photo_hfvvtf.jpg")no-repeat;
     background-size: cover;
     height: 500px;
 }
