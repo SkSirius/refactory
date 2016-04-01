@@ -237,8 +237,4 @@ Back To Top Button
       });
       
       $('#back-top').tooltip('hide');
-
-
-
-
 });

@@ -50,14 +50,11 @@ block content
 				.share1
 					h4 Share this :
 					ul.social-contact.list-inline
-						li
-							a(href='#')
-								i.fa.fa-facebook
-						li
-							a(href='#')
-								i.fa.fa-twitter
-							a(href='#')
-								i.fa.fa-linkedin
+						li(style='float:left; padding-top:7px')
+							.fb-share-button(data-layout="button")
+						li(style='float:left; padding-top:7px')
+							.twt-button
+								a.twitter-share-button(href="https://twitter.com/share", data-via="CompactoryInfo", data-hashtags="companyblog,compactory", data-text="Compactory Team")
 				.clearfix
 				hr
 				.about-auther
@@ -133,3 +130,4 @@ block content
 					// blog sidebar end
 				// sidebar end
 		// Portfolio item row end
+		script(src='/js/post.js', type='text/javascript')

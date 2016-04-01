@@ -292,6 +292,8 @@ textarea:hover {
     background: #F6F6F6;
     color: #EE3B24;
 }
+
+.social-contact li { cursor: pointer; }
 .social-contact li i:hover{
     color: #EE3B24;
     border:1px solid #EE3B24;
