@@ -22,6 +22,13 @@
 
 }
 
+@media(max-width: 1500px) {
+	.carousel-caption h2 { width: 40%; }
+}
+@media(max-width: 1400px) {
+	.carousel-caption h2 { font-size: 48px; }
+}
+
 /* Small Devices, Tablets */
 @media (min-width : 768px) and (max-width: 991px) {
 	
@@ -45,8 +52,9 @@
 	.carousel-caption h2{
     	font-size: 30px;
 		line-height: 55px;
-		width: 30%;
+		width: 40%;
 		margin-bottom: 40px;
+		
 	}
 	.carousel-caption h2:after{
 	    height: 80px;
