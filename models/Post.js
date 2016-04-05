@@ -23,7 +23,6 @@ Post.add({
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 	tags: { type: Types.Relationship, ref: 'Tag', many: true },
-	comments: { type: Types.Relationship, ref: 'Comment', index: true }
 });
 
 Post.schema.virtual('content.full').get(function() {
