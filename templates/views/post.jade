@@ -60,8 +60,6 @@ block content
 								li.col-md-12.col-sm-4
 									.single-post
 										a(href='/blog/post/' + post.slug)
-											if post.image.url && post.image.url.length
-												img(src=post._.image.fit(300,300), alt='post-img').img-responsive
 											h4!= post.title
 										span #{post._.publishedDate.format('MMMM Do, YYYY')}
 					// Recent posts end
