@@ -2070,6 +2070,7 @@ padding: 8px 15px;
     -webkit-box-shadow:none!important ;
     box-shadow: none!important;
     border: 0px;
+	height: 100px;
 }
 
 .about-auther h4,.comments h4{
