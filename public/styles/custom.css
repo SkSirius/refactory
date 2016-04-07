@@ -1932,6 +1932,7 @@ padding: 8px 15px;
 }
 
 #blog-single .container article p { font-size: 18px; }
+#blog-single .container article .image-wrap { margin-bottom: 20px; }
 #blog-single .container article p img { margin-top: 20px; margin-bottom: 20px; }
 #blog-single .container article h4 { font-size: 22px; color: #000; margin-top: 30px; margin-bottom: 30px; }
 #blog-single .container article h5 { font-size: 20px; color: #6a6a6a; }
