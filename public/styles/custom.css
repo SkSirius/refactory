@@ -2268,12 +2268,12 @@ padding: 8px 15px;
 }
 .recent-post li{
     margin-bottom: 10px;
-    padding: 15px 0px;
+    padding: 5px 0px;
 }
 .single-post{
     float: left;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #DDD;
     width: 100%;
 }

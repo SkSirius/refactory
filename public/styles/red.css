@@ -300,6 +300,9 @@ textarea:hover {
 }
 /*blog
 =====================*/
+#blog-single .single-post a { color: #EE3B24 !important; }
+#blog-single .single-post a:hover { color: #B22C2C; }
+
 #blog{
     background: #F8F8F8;
 }
