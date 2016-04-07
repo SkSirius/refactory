@@ -13,7 +13,7 @@ block content
 	section#blog-single
 		.container
 			// Portfolio item slider start
-			.col-lg-8.col-md-8.col-sm-12.col-xs-12
+			.col-md-offset-2.col-lg-offset-2.col-lg-8.col-md-8.col-sm-12.col-xs-12
 				article
 					p: a(href='/blog/all') &larr; back to the blog
 					hr
@@ -41,12 +41,6 @@ block content
 							!= data.post.content.full
 				hr
 				.clearfix
-				.tags1
-					p Tags: 
-						if data.post.tags && data.post.tags.length
-							each tag in data.post.tags
-								a(href='#')= tag.name 
-								&nbsp;
 				.share1
 					h4 Share this :
 					ul.social-contact.list-inline
@@ -56,6 +50,22 @@ block content
 							.twt-button
 								a.twitter-share-button(href="https://twitter.com/share", data-via="CompactoryInfo", data-hashtags="companyblog,compactory", data-text="Compactory Team")
 				.clearfix
+				.blog-sidebar
+					if data.posts && data.posts.length
+					.recent-post
+						h4 Latest posts
+						hr
+						ul
+							each post in data.posts
+								li.col-md-12.col-sm-4
+									.single-post
+										a(href='/blog/post/' + post.slug)
+											if post.image.url && post.image.url.length
+												img(src=post._.image.fit(300,300), alt='post-img').img-responsive
+											h4!= post.title
+										span #{post._.publishedDate.format('MMMM Do, YYYY')}
+					// Recent posts end
+					.clearfix
 				hr
 				.about-auther
 					h4 About the Author
@@ -83,51 +93,5 @@ block content
 							s.setAttribute('data-timestamp', +new Date());
 							(d.head || d.body).appendChild(s);
 						})();
-			// left blog part end
-			// Right Blog part row start
-			.row
-				// sidebar start
-				.col-lg-4.col-md-4.col-sm-12.col-xs-12
-					.blog-sidebar
-						if data.posts && data.posts.length
-						.recent-post
-							h4 Latest posts
-							hr
-							ul
-								each post in data.posts
-									li.col-md-12.col-sm-4
-										.single-post
-											a(href='/blog/post/' + post.slug)
-												if post.image.url && post.image.url.length
-													img(src=post._.image.fit(300,300), alt='post-img').img-responsive
-												h4!= post.title
-											span #{post._.publishedDate.format('MMMM Do, YYYY')}
-						// Recent posts end
-						.clearfix
-						.blog-catagory
-							h4 Blog categories
-							ul
-								li
-									a(href='/blog/all', class=!data.category ? 'active' : false)
-										i.fa.fa-angle-right
-										|  All Categories
-										span.badge= data.allCount
-								each cat in data.categories
-									li
-										a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false)
-											i.fa.fa-angle-right
-											= cat.name
-											span.badge= cat.postCount
-								// blog catagory end
-								.clearfix
-								if data.tags.length
-									.right-tags
-										h4 Tags
-										hr
-										.footer_menu.tags
-											each tag in data.tags
-												a(href='/blog/all/' + tag.name)= tag.name
-					// blog sidebar end
-				// sidebar end
 		// Portfolio item row end
 		script(src='/js/post.js', type='text/javascript')
