@@ -1933,6 +1933,9 @@ padding: 8px 15px;
 
 #blog-single .container article p { font-size: 18px; }
 #blog-single .container article h4 { font-size: 22px; color: #000; }
+#blog-single .container article h5 { font-size: 20px; color: #6a6a6a; }
+#blog-single .container article ul { font-size: 18px; margin-left: 50px; }
+#blog-single .container article ul li { padding: 10px; }
 
 #banner{
     background: url("../images/bg/pexels-photo.jpg")no-repeat;
