@@ -99,10 +99,3 @@ block content
 									span.badge= cat.postCount
 				// blog catagory end
 				.clearfix
-				if data.tags.length
-					.right-tags
-						h4 Tags
-						hr
-						.footer_menu.tags
-							each tag in data.tags
-								a(href='/blog/all/' + tag.name)= tag.name
